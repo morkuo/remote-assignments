@@ -9,30 +9,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/google-sans" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <nav>
-      <div class="container">
+      <div id="nav_container" class="container">
         <div id="nav_logo">
           <img src="https://www.gstatic.com/devrel-devsite/prod/ve4ec520df3c6e96b08203f4b6a469718dcd1daaac8e4c6cd41f91b26aa5dbbd4/developers/images/lockup.svg" alt="Google Logo" />
         </div>
         <div id="items"></div>
         <div id="user">
           <div id="search_bar">
-            <p id="search_bar_magnifier"></p>
+            <img id="search_bar_magnifier" src="./search_icon.png" />
             <input id="search_bar_input" type="text" placeholder="Search" />
             <p id="search_bar_fork"></p>
           </div>
-          <div id="nav_language"><button class="language_toggle_btn">Language</button></div>
-          <div id="developer_profile">O</div>
-          <div id="account_profile">O</div>
+          <div id="nav_language" class="language_toggle_btn">
+            <img class="language_icon" src="./earth_icon.png" />
+            <span>English</span>
+          </div>
+          <div id="developer_profile"><span></span><span></span><span></span></div>
+          <div id="account_profile"></div>
         </div>
       </div>
     </nav>
     <header>
-      <div class="container">
+      <div id="input_output_container" class="container">
         <div id="input_output">
           <div id="input_output_iframe">
             <iframe
@@ -44,9 +47,9 @@
             ></iframe>
           </div>
           <div id="input_output_desc">
-            <p id="input_output_desc_title">And that's a wrap!</p>
+            <div id="input_output_desc_title"><a href="">And that's a wrap!</a></div>
             <p id="input_output_desc_content">Thanks for joining I/O 2022! Catch up on the latest technology announcements from Google.</p>
-            <button class="blue_background_btn">See full program</button>
+            <div id="input_output_desc_button"><button class="blue_background_btn">See full program</button></div>
           </div>
         </div>
       </div>
@@ -54,7 +57,7 @@
     <main>
       <div class="container">
         <div id="products_intro">
-          <p>Build anything with Google</p>
+          <h2>Build <strong>anything</strong> with Google</h2>
           <div id="products_cards_box">
             <div class="products_card">
               <div class="products_icon">
@@ -129,12 +132,12 @@
               <p>YouTube</p>
             </div>
           </div>
-          <button class="blue_background_btn">View all developer products</button>
+          <div id="products_intro_btn"><button class="blue_background_btn">View all developer products</button></div>
         </div>
       </div>
       <div class="container">
         <div id="events_community_intro">
-          <div class="events_community_heading">
+          <div class="events_community_box">
             <div class="grid_background"><img src="https://developers.google.com/site-assets/images/home/card-header-grid_856.png" alt="grid_background" /></div>
             <div class="events_community_title"><a class="blue_title" href="">Events</a></div>
             <div class="events_community_text">
@@ -142,7 +145,7 @@
             </div>
             <div class="events_community_more_btn"><button class="blue_text_btn_border">See events</button></div>
           </div>
-          <div class="events_community_heading">
+          <div class="events_community_box">
             <div class="grid_background"><img src="https://developers.google.com/site-assets/images/home/card-header-grid_856.png" alt="grid_background" /></div>
             <div class="events_community_title"><a class="blue_title" href="">Community</a></div>
             <div class="events_community_text"><p>Connect with fellow developers and startups in your area, hear from industry experts, share your skills, and learn new ones.</p></div>
@@ -152,7 +155,7 @@
       </div>
       <div id="news_container" class="container">
         <div id="news_intro">
-          <div id="news_heading"><p>News</p></div>
+          <div id="news_heading"><h2>News</h2></div>
           <div id="news_cards_box">
             <div class="news_card">
               <div class="news_icon">
@@ -221,20 +224,20 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div id="experts_container" class="container">
         <div id="experts_intro">
-          <div id="experts_heading_one"><p>Find a Google developer expert</p></div>
+          <div id="experts_heading_one"><h2>Find a Google developer expert</h2></div>
           <div id="experts_heading_two"><p>Browse our directory of developer experts who have been recognized by Google for their depth of tech knowledge and skills.</p></div>
           <div id="experts_more_btn"><button class="blue_text_btn_border">View all developer experts</button></div>
           <div id="experts_cards_box">
             <div class="expert_card">
               <div class="expert_card_thumbnail">
-                <div class="expert_card_thumbnail_circle"><img src="https://lh5.googleusercontent.com/-RNWy2fnuSeA/AAAAAAAAAAI/AAAAAAAAnHQ/xFSuk_64ANw/s172-c/photo.jpg" alt="photo" /></div>
+                <img src="https://lh5.googleusercontent.com/-RNWy2fnuSeA/AAAAAAAAAAI/AAAAAAAAnHQ/xFSuk_64ANw/s172-c/photo.jpg" alt="photo" />
               </div>
               <div class="expert_card_profile">
-                <div class="name"><p>Yvonne Allen</p></div>
-                <div class="residence"><p>Atlanta, GA United States</p></div>
-                <div class="expertise">
+                <div class="expert_card_profile_name"><p>Yvonne Allen</p></div>
+                <div class="expert_card_profile_residence"><p>Atlanta, GA United States</p></div>
+                <div class="expert_card_profile_expertise">
                   <p class="expertise_title">Expertise:</p>
                   <p class="expertise_content">Angular</p>
                 </div>
@@ -243,12 +246,12 @@
             </div>
             <div class="expert_card">
               <div class="expert_card_thumbnail">
-                <div class="expert_card_thumbnail_circle"><img src="https://lh3.googleusercontent.com/a/AATXAJwxZglBXE69MNbbSPgpWpwr0x_MgkjfyOXOnWACTQ=s96-c" alt="photo" /></div>
+                <img src="https://lh3.googleusercontent.com/a/AATXAJwxZglBXE69MNbbSPgpWpwr0x_MgkjfyOXOnWACTQ=s96-c" alt="photo" />
               </div>
               <div class="expert_card_profile">
-                <div class="name"><p>Dean Julian</p></div>
-                <div class="residence"><p>Toowoomba, QLD Australia</p></div>
-                <div class="expertise">
+                <div class="expert_card_profile_name"><p>Dean Julian</p></div>
+                <div class="expert_card_profile_residence"><p>Toowoomba, QLD Australia</p></div>
+                <div class="expert_card_profile_expertise">
                   <p class="expertise_title">Expertise:</p>
                   <p class="expertise_content">Firebase</p>
                 </div>
@@ -257,12 +260,12 @@
             </div>
             <div class="expert_card">
               <div class="expert_card_thumbnail">
-                <div class="expert_card_thumbnail_circle"><img src="https://lh6.googleusercontent.com/-zqGnY2CoQDE/AAAAAAAAAAI/AAAAAAACEjc/ITmu1vHvfqU/s172-c/photo.jpg" alt="photo" /></div>
+                <img src="https://lh6.googleusercontent.com/-zqGnY2CoQDE/AAAAAAAAAAI/AAAAAAACEjc/ITmu1vHvfqU/s172-c/photo.jpg" alt="photo" />
               </div>
               <div class="expert_card_profile">
-                <div class="name"><p>Sierra OBryan</p></div>
-                <div class="residence"><p>Cincinnati, OH United States</p></div>
-                <div class="expertise">
+                <div class="expert_card_profile_name"><p>Sierra OBryan</p></div>
+                <div class="expert_card_profile_residence"><p>Cincinnati, OH United States</p></div>
+                <div class="expert_card_profile_expertise">
                   <p class="expertise_title">Expertise:</p>
                   <p class="expertise_content">Android</p>
                 </div>
@@ -271,14 +274,12 @@
             </div>
             <div class="expert_card">
               <div class="expert_card_thumbnail">
-                <div class="expert_card_thumbnail_circle">
-                  <img src="https://sfo2.digitaloceanspaces.com/advocu/gde/profile-photos/2021/04/06/34311b87-b738-4568-b233-224166af2ba6.jpeg" alt="photo" />
-                </div>
+                <img src="https://sfo2.digitaloceanspaces.com/advocu/gde/profile-photos/2021/04/06/34311b87-b738-4568-b233-224166af2ba6.jpeg" alt="photo" />
               </div>
               <div class="expert_card_profile">
-                <div class="name"><p>Bill Stavroulakis</p></div>
-                <div class="residence"><p>San Francisco United States</p></div>
-                <div class="expertise">
+                <div class="expert_card_profile_name"><p>Bill Stavroulakis</p></div>
+                <div class="expert_card_profile_residence"><p>San Francisco United States</p></div>
+                <div class="expert_card_profile_expertise">
                   <p class="expertise_title">Expertise:</p>
                   <p class="expertise_content">Web Technologies</p>
                 </div>
@@ -293,35 +294,41 @@
       <div class="container">
         <div id="links_card_box">
           <div class="links_card">
-            <div class="links_card_title"><p>Connect</p></div>
+            <div class="links_card_title"><h3>Connect</h3></div>
             <div class="links_card_content">
-              <a href="">Blog</a>
-              <a href="">Facebook</a>
-              <a href="">Medium</a>
-              <a href="">Twitter</a>
-              <a href="">YouTube</a>
+              <ul>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Medium</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">YouTube</a></li>
+              </ul>
             </div>
           </div>
           <div class="links_card">
-            <div class="links_card_title"><p>Programs</p></div>
+            <div class="links_card_title"><h3>Programs</h3></div>
             <div class="links_card_content">
-              <a href="">Women Techmakers</a>
-              <a href="">Google Developer Groups</a>
-              <a href="">Google Developers Experts</a>
-              <a href="">Accelerators</a>
-              <a href="">Google Developer Student Clubs</a>
+              <ul>
+                <li><a href="">Women Techmakers</a></li>
+                <li><a href="">Google Developer Groups</a></li>
+                <li><a href="">Google Developers Experts</a></li>
+                <li><a href="">Accelerators</a></li>
+                <li><a href="">Google Developer Student Clubs</a></li>
+              </ul>
             </div>
           </div>
           <div class="links_card">
-            <div class="links_card_title"><p>Developer consoles</p></div>
+            <div class="links_card_title"><h3>Developer consoles</h3></div>
             <div class="links_card_content">
-              <a href="">Google API Console</a>
-              <a href="">Google Cloud Platform Console</a>
-              <a href="">Google Play Console</a>
-              <a href="">Firebase Console</a>
-              <a href="">Actions on Google Console</a>
-              <a href="">Cast SDK Developer Console</a>
-              <a href="">Chrome Web Store Dashboard</a>
+              <ul>
+                <li><a href="">Google API Console</a></li>
+                <li><a href="">Google Cloud Platform Console</a></li>
+                <li><a href="">Google Play Console</a></li>
+                <li><a href="">Firebase Console</a></li>
+                <li><a href="">Actions on Google Console</a></li>
+                <li><a href="">Cast SDK Developer Console</a></li>
+                <li><a href="">Chrome Web Store Dashboard</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -330,11 +337,13 @@
         <div id="products_links">
           <div id="footer_logo"><img src="https://www.gstatic.com/devrel-devsite/prod/ve4ec520df3c6e96b08203f4b6a469718dcd1daaac8e4c6cd41f91b26aa5dbbd4/developers/images/lockup.svg" alt="" /></div>
           <div class="links_card_content">
-            <a href="">Android</a>
-            <a href="">Chrome</a>
-            <a href="">Firebase</a>
-            <a href="">Google Cloud Platform</a>
-            <a href="">All products</a>
+            <ul>
+              <li><a href="">Android</a></li>
+              <li><a href="">Chrome</a></li>
+              <li><a href="">Firebase</a></li>
+              <li><a href="">Google Cloud Platform</a></li>
+              <li><a href="">All products</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -349,7 +358,10 @@
             <p>Sign up for the Google Developers newsletter</p>
             <button class="blue_background_btn">Subscribe</button>
           </div>
-          <div id="footer_language"><button class="language_toggle_btn">Language</button></div>
+          <div id="footer_language" class="language_toggle_btn">
+            <img class="language_icon" src="./earth_icon.png" />
+            <span>English</span>
+          </div>
         </div>
       </div>
     </footer>
