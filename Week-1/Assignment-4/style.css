@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
 nav,
@@ -18,14 +19,18 @@ footer,
 .products_icon,
 #events_community_intro,
 #news_intro,
+.news_icon,
 #experts_intro,
 #experts_cards_box,
-#links_card,
+.expert_card_profile,
+#links_card_box,
+.links_card,
+.links_card_content,
 #products_links,
 #footer_logo,
 #terms_subscribe_language,
 #terms,
-.links_card_content {
+#subscribe {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +44,11 @@ footer,
 #events_community_intro,
 #news_intro,
 #experts_intro,
-#links_card,
+#experts_cards_box,
+.expert_card_profile,
+#links_card_box,
+.links_card,
+.links_card_content,
 #products_links,
 #terms_subscribe_language,
 .links_card_content {
@@ -52,6 +61,14 @@ nav .container {
 
 footer .container {
   justify-content: flex-start;
+}
+
+#links_card_box,
+.links_card,
+.links_card_content,
+#products_links,
+#terms_subscribe_language {
+  align-items: flex-start;
 }
 
 #products_cards_box {
@@ -69,7 +86,8 @@ footer .container {
   width: 30vw;
 }
 
-#input_output_iframe {
+#input_output_iframe,
+.grid_background img {
   height: 100%;
   width: 100%;
 }
@@ -83,6 +101,62 @@ footer .container {
   width: 50px;
 }
 
+.news_icon img {
+  width: 128px;
+}
+
+.news_icon_img_height {
+  height: 128px;
+}
+
 .products_icon {
   flex-grow: 1;
+}
+
+.events_community_heading,
+.news_card {
+  border: 1px solid lightgrey;
+}
+
+#news_container {
+  margin: 0;
+  width: 100vw;
+  background-color: #f1f3f4;
+}
+
+#news_intro {
+  padding: 1rem;
+}
+
+.news_card {
+  background-color: white;
+}
+
+.blue_background_btn {
+  padding: 0.5rem 1.3rem 0.8rem 1.3rem;
+  background-color: #1a73e8;
+  color: #f0f4fa;
+  border: none;
+  border-radius: 3px;
+}
+
+.blue_text_btn_border {
+  padding: 0.4rem 1.3rem 0.6rem 1.3rem;
+  background-color: white;
+  color: #4d92ed;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.blue_text_btn {
+  padding: 0.5rem;
+  background-color: white;
+  color: #4d92ed;
+  border: none;
+}
+
+#input_output_desc_title {
+  color: #1a73e8;
+  font-size: 1.9rem;
+  font-weight: 300;
 }
