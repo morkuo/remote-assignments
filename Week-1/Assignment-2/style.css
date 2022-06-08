@@ -11,6 +11,15 @@ nav {
   background-color: #eeeeee;
 }
 
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav div img {
+  height: 1.5rem;
+}
+
 nav ul,
 nav ul li {
   display: flex;
