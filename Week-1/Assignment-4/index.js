@@ -1,5 +1,5 @@
 // rotate triangle icons
-const navItems = document.querySelectorAll("#items li");
+const navItems = document.querySelectorAll("#items li.item");
 navItems.forEach(list => {
   const triangleIcon = list.querySelector(".triangle_icon");
   if (triangleIcon) {
@@ -12,15 +12,6 @@ navItems.forEach(list => {
   }
 });
 
-const navItemsMore = document.querySelector("#items_more");
-const navItemsMoreImg = navItemsMore.querySelector("img");
-navItemsMore.addEventListener("mouseenter", () => {
-  navItemsMoreImg.classList.toggle("triangle_icon_rotation");
-});
-navItemsMore.addEventListener("mouseleave", () => {
-  navItemsMoreImg.classList.toggle("triangle_icon_rotation");
-});
-
 const languageToggleBtns = document.querySelectorAll(".language_toggle_btn");
 languageToggleBtns.forEach(btn => {
   const triangleIcon = btn.querySelector(".triangle_icon");
@@ -30,21 +21,6 @@ languageToggleBtns.forEach(btn => {
   btn.addEventListener("mouseleave", () => {
     triangleIcon.classList.toggle("triangle_icon_rotation");
   });
-});
-
-// change background color or add border when hover over certain element
-// search bar
-const searchBar = document.querySelector("#search_bar");
-const searchBarInputField = searchBar.querySelector("input");
-
-searchBar.addEventListener("mouseenter", () => {
-  searchBar.style.backgroundColor = "#e9eaec";
-  searchBarInputField.style.backgroundColor = "#e9eaec";
-});
-
-searchBar.addEventListener("mouseleave", () => {
-  searchBar.style.backgroundColor = "#f1f3f4";
-  searchBarInputField.style.backgroundColor = "#f1f3f4";
 });
 
 //language btns
@@ -79,6 +55,53 @@ accountProfile.addEventListener("mouseleave", () => {
 });
 
 // extend search bar when it is clicked
+const searchBar = document.querySelector("#search_bar");
+const searchBarInputField = document.querySelector("#search_bar_input");
+const searchBarClosePanel = document.querySelector("#search_bar_close_panel");
 searchBarInputField.addEventListener("click", () => {
   searchBar.classList.toggle("search_bar_extending");
+});
+
+searchBarClosePanel.addEventListener("click", () => {
+  searchBar.classList.toggle("search_bar_extending");
+});
+
+/* extends items' menu when it is hovered over */
+navItems.forEach(list => {
+  const triangleIcon = list.querySelector(".triangle_icon");
+  if (triangleIcon) {
+    list.addEventListener("mouseenter", () => {
+      list.classList.toggle("item_extending");
+    });
+    list.addEventListener("mouseleave", () => {
+      list.classList.toggle("item_extending");
+    });
+  }
+});
+
+//展開內容自己維持自己展開
+//Product
+const itemProductDetail = document.querySelector("#item_product_detail");
+const itemProduct = itemProductDetail.previousElementSibling;
+const triangleIcon = itemProduct.querySelector("img");
+itemProductDetail.addEventListener("mouseenter", () => {
+  itemProduct.classList.toggle("item_extending");
+  triangleIcon.classList.toggle("triangle_icon_rotation");
+});
+itemProductDetail.addEventListener("mouseleave", () => {
+  itemProduct.classList.toggle("item_extending");
+  triangleIcon.classList.toggle("triangle_icon_rotation");
+});
+
+//moreBtn toggle
+const moreBtn = navItems[navItems.length - 1];
+moreBtn.addEventListener("mouseenter", () => {
+  const listNotShowing = [];
+  navItems.forEach((list, index) => {
+    if (index !== navItems.length - 1) {
+      if (!list.classList.contains("showing")) {
+        listNotShowing.push(list.textContent);
+      }
+    }
+  });
 });

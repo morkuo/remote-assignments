@@ -11,7 +11,7 @@ main,
 footer,
 .container,
 #nav_logo,
-#items_more,
+/* #items_more, */
 #user,
 #search_bar,
 .language_toggle_btn,
@@ -525,7 +525,7 @@ button,
 .language_toggle_btn,
 #nav_logo,
 #footer_logo,
-#items_more,
+/* #items_more, */
 #search_bar_magnifier,
 #developer_profile,
 #account_profile {
@@ -769,7 +769,7 @@ a {
 @media (min-width: 1428px) {
   /* 導覽列 items 完整顯示 6個 item */
   #user {
-    width: 30vw;
+    width: 17vw;
   }
 
   #search_bar_magnifier {
@@ -788,7 +788,7 @@ a {
     flex-grow: 1;
   }
 
-  #items li:last-child {
+  #items li:nth-child(6) {
     display: none;
   }
 
@@ -796,9 +796,9 @@ a {
     margin-right: 0;
   }
 
-  #items_more {
+  /* #items_more {
     margin-left: 3rem;
-  }
+  } */
 
   /* items hover effect */
   #items li,
@@ -832,7 +832,7 @@ a {
 }
 
 /* rotate triangle icons */
-#items a:hover {
+#items li a:hover {
   color: black;
   border-bottom: 2px solid black;
 }
@@ -852,6 +852,14 @@ a {
 }
 
 /* change background color or when hover over certain element */
+#search_bar:hover {
+  background-color: #e9eaec;
+}
+
+#search_bar:hover input {
+  background-color: #e9eaec;
+}
+
 .blue_background_btn:hover {
   background-color: #1868d0;
 }
@@ -862,44 +870,53 @@ a {
 }
 
 /* extends search bar when it is clicked */
-.search_bar_extending {
+#search_bar.search_bar_extending,
+#search_bar.search_bar_extending #search_bar_input {
+  background-color: white;
+  justify-content: flex-start;
 }
 
-/* reference */
-#search_bar {
-  padding: 0.35rem 0;
+#search_bar.search_bar_extending {
+  position: fixed;
+  width: 900px;
+  border: 1px solid lightgrey;
+  left: 250px;
 }
 
-#search_bar_magnifier,
-.language_icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 5px 0 12px;
+#search_bar.search_bar_extending #search_bar_close_panel {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
 }
 
-#search_bar_input {
+/* extends items' menu when it is hovered over */
+#items div {
   display: none;
-  width: 155px;
-  background-color: #f1f3f4;
-  border: none;
-  font-size: 15px;
-  color: #8f9091;
 }
 
-#search_bar {
-  width: 200px;
-  background-color: #f1f3f4;
-  border-radius: 5px;
-}
-
-#search_bar_input {
-  display: block;
-}
-
-#search_bar_input:focus {
-  outline: none;
-}
-
-#items {
+#items li:first-child.item_extending + div {
   display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 3rem;
+  height: 500px;
+  width: 650px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 1rem;
+}
+
+#items li:first-child.item_extending + div div {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+#items li:first-child.item_extending + div p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  cursor: default;
 }
