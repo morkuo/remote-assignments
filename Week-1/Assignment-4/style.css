@@ -828,12 +828,8 @@ a {
 }
 
 /* rotate triangle icons */
-#items li a:hover {
-  color: black;
-  border-bottom: 2px solid black;
-}
-
-.triangle_icon_rotation {
+#items li:hover .triangle_icon,
+#items li.item_extending .triangle_icon {
   animation: rotation 0.4s;
   animation-fill-mode: forwards;
 }
@@ -847,13 +843,30 @@ a {
   }
 }
 
-/* change background color or when hover over certain element */
+/* change background color or color when hover over certain element */
+#items li a:hover {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
 #search_bar:hover {
   background-color: #e9eaec;
 }
 
 #search_bar:hover input {
   background-color: #e9eaec;
+}
+
+.language_toggle_btn:hover {
+  background-color: #f0f1f4;
+}
+
+#developer_profile:hover {
+  background-color: #e9eaec;
+}
+
+#account_profile:hover {
+  border: 2px solid rgba(174, 197, 243, 0.941);
 }
 
 .blue_background_btn:hover {
@@ -1067,9 +1080,6 @@ footer #footer_language.item_extending ~ #footer_language_close_panel {
 }
 
 /* developer profile circle*/
-#developer_profile:hover {
-  background-color: #e9eaec;
-}
 
 #developer_profile_detail {
   display: none;
