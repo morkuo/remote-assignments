@@ -115,6 +115,7 @@ nav {
 #user {
   width: 40%;
   justify-content: space-around;
+  margin-left: 1rem;
 }
 
 #items {
@@ -124,6 +125,10 @@ nav {
 #items ul {
   display: none;
   list-style: none;
+}
+
+#items #more_btn {
+  display: none;
 }
 
 .triangle_icon {
@@ -184,7 +189,7 @@ nav {
 #nav_logo,
 #footer_logo {
   height: 100%;
-  width: 13vw;
+  width: 10vw;
 }
 
 #nav_logo img,
@@ -768,7 +773,7 @@ a {
 @media (min-width: 1428px) {
   /* 導覽列 items 完整顯示 6個 item */
   #user {
-    width: 17vw;
+    width: 11vw;
   }
 
   #search_bar_magnifier {
@@ -783,25 +788,26 @@ a {
 
   #items ul {
     display: flex;
-    justify-content: space-between;
     flex-grow: 1;
-  }
-
-  /* Hide Developer Profile  */
-  #items li:nth-child(8) {
-    display: none;
   }
 
   #items ul img {
     margin-right: 0;
   }
 
-  /* items hover effect */
   #items li,
   #items a {
     height: 3rem;
     display: flex;
     align-items: center;
+  }
+
+  #items #more_btn {
+    display: none;
+  }
+
+  #items li {
+    padding-right: 2.25rem;
   }
 
   /* news_card 調整 */
@@ -824,6 +830,22 @@ a {
   .news_icon {
     align-items: center;
     height: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  #input_output_container,
+  #products_intro,
+  #events_community_intro,
+  #news_intro,
+  #experts_intro {
+    width: 1500px;
+  }
+
+  .products_card,
+  .news_card,
+  .expert_card {
+    width: 18vw;
   }
 }
 
@@ -887,7 +909,7 @@ a {
 
 #search_bar.search_bar_extending {
   position: fixed;
-  width: 900px;
+  width: 1400px;
   border: 1px solid lightgrey;
   left: 250px;
 }
@@ -923,25 +945,25 @@ a {
 }
 
 /* Product */
-#items li:first-child.item_extending + div {
+#item_product.item_extending + div {
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 3rem;
   height: 500px;
-  width: 650px;
+  width: 600px;
   background-color: white;
   border: 1px solid lightgrey;
   padding: 1rem;
 }
 
-#items li:first-child.item_extending + div div {
+#item_product.item_extending + div div {
   display: flex;
   flex-direction: column;
   width: 33%;
 }
 
-#items li:first-child.item_extending + div p {
+#item_product.item_extending + div p {
   margin-bottom: 0.5rem;
   font-size: 13px;
   font-weight: 600;
@@ -949,12 +971,12 @@ a {
 }
 
 /* Developer Communities */
-#items li:nth-child(5).item_extending + div {
+#item_developer_communities.item_extending + div {
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 3rem;
-  left: 550px;
+  left: 520px;
   height: 180px;
   width: 415px;
   background-color: white;
@@ -962,37 +984,10 @@ a {
   padding: 1rem;
 }
 
-#items li:nth-child(5).item_extending + div div {
+#item_developer_communities.item_extending + div div {
   display: flex;
   flex-direction: column;
   width: 50%;
-}
-
-/* More Btn */
-#items li:last-child a:hover {
-  border: none;
-}
-
-#items li:nth-child(8).item_extending {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  height: auto;
-  top: 3rem;
-  left: 830px;
-  background-color: white;
-  border: 1px solid lightgrey;
-}
-
-#items li:nth-child(8).item_extending a {
-  padding: 1rem;
-  margin: 1rem 0;
-}
-
-#items li:nth-child(8).item_extending a:hover {
-  background-color: #e9eaec;
-  border: none;
 }
 
 #item_product_detail a:hover,
@@ -1007,7 +1002,7 @@ a {
   overflow-y: scroll;
   position: fixed;
   top: 3rem;
-  right: 100px;
+  right: 75px;
   height: 300px;
   width: 150px;
   background-color: white;

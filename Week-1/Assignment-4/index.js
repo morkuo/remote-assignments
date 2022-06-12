@@ -36,13 +36,13 @@ addClassOnEvent("mouseenter", itemDevComDetail, itemDevCom, "item_extending");
 addClassOnEvent("mouseleave", itemDevComDetail, itemDevCom, "item_extending");
 
 //moreBtn
-const moreBtn = document.querySelector("#items ul li:last-child");
-const itemDeveloperProfile = moreBtn.previousElementSibling;
-const moreBtnTriangleIcon = moreBtn.querySelector("img");
+// const moreBtn = document.querySelector("#items ul li:last-child");
+// const itemDeveloperProfile = moreBtn.previousElementSibling;
+// const moreBtnTriangleIcon = moreBtn.querySelector("img");
 
-addClassOnEvent("mouseenter", moreBtn, itemDeveloperProfile, "item_extending");
-addClassOnEvent("mouseleave", moreBtn, itemDeveloperProfile, "item_extending");
-addClassOnEvent("mouseleave", itemDeveloperProfile, itemDeveloperProfile, "item_extending");
+// addClassOnEvent("mouseenter", moreBtn, itemDeveloperProfile, "item_extending");
+// addClassOnEvent("mouseleave", moreBtn, itemDeveloperProfile, "item_extending");
+// addClassOnEvent("mouseleave", itemDeveloperProfile, itemDeveloperProfile, "item_extending");
 
 //click 展開內容保持展開狀態，點擊原按鈕或按鈕外元素才關閉
 // search bar
