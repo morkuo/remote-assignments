@@ -18,11 +18,14 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-  const { number } = req.query;
+  let { number } = req.query;
 
-  if (number === "") res.send("Wrong Parameter");
-  if (!number) res.send("Lack of Parameter");
-  if (!Number.isInteger(+number)) res.send("Wrong Parameter");
+  if (number === "") return res.send("Wrong Parameter");
+  if (!number) return res.send("Lack of Parameter");
+
+  number = +number;
+  if (!Number.isInteger(number) || Math.abs(number) != number)
+    return res.send("Wrong Parameter");
 
   res.send(`${sumToCertainNum(+number)}`);
 });
