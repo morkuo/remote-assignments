@@ -4,28 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Two Sum</title>
   </head>
   <body>
     <script>
-      function twoSum(nums, target) {
-        // your code here
+      function twoSumQuadraticTime(nums, target) {
         for (let i = 0; i < nums.length; i++) {
           const currentNum = nums[i];
+
           for (let j = i + 1; j < nums.length; j++) {
-            if (currentNum + nums[j] === target) return [i, j];
+            if (currentNum + nums[j] === target) {
+              return [i, j];
+            }
           }
         }
       }
-      /*
-        For example:
-        twoSum([2, 7, 11, 15], 9);
-        Should returns:
-        [0, 1]
-        Because:
-        nums[0]+nums[1] is 9
-      */
-      console.log(twoSum([2, 7, 11, 15], 9));
+
+      function twoSumLinearTime(nums, target) {
+        const hashTable = {};
+
+        for (let i = 0; i < nums.length; i++) {
+          //Take note of what values are in the array and where they sit
+          hashTable[nums[i]] = i;
+        }
+
+        for (let i = 0; i < nums.length; i++) {
+          const complementIndex = hashTable[target - nums[i]];
+
+          if (complementIndex && complementIndex != i) {
+            return [i, complementIndex];
+          }
+        }
+      }
+
+      console.log(twoSumLinearTime([2, 7, 11, 15], 9));
+
+      // console.log(twoSumQuadraticTime([2, 7, 11, 15], 9));
     </script>
   </body>
 </html>
