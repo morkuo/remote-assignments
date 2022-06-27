@@ -24,16 +24,13 @@
         const hashTable = {};
 
         for (let i = 0; i < nums.length; i++) {
+          const complementIndex = hashTable[target - nums[i]];
+          if (complementIndex !== undefined && complementIndex != i) {
+            return [complementIndex, i];
+          }
+
           //Take note of what values are in the array and where they sit
           hashTable[nums[i]] = i;
-        }
-
-        for (let i = 0; i < nums.length; i++) {
-          const complementIndex = hashTable[target - nums[i]];
-
-          if (complementIndex && complementIndex != i) {
-            return [i, complementIndex];
-          }
         }
       }
 

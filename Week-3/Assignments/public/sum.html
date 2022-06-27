@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sum</title>
-    </head>
-    <body>
-        <p>Please enter a number</p>
-        <input type="text" />
-        <button>Submit</button>
-        <div></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum</title>
+  </head>
+  <body>
+    <p>Please enter a positive integer</p>
+    <input type="text" pattern="[0-9]+" title="Please enter a positive integer." />
+    <button style="cursor: pointer">Submit</button>
+    <div></div>
 
-        <script>
-            const input = document.querySelector('input');
-            const button = document.querySelector('button');
-            const div = document.querySelector('div');
+    <script>
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
+      const div = document.querySelector('div');
 
-            button.addEventListener('click', () => {
-                fetch(`data?number=${input.value}`)
-                    .then(res => res.text())
-                    .then(data => {
-                        if (!isNaN(+data)) {
-                            div.innerHTML = `<p>The sum from 1 to ${input.value} is ${data}</p>`;
-                        }
-                    });
-            });
-        </script>
-    </body>
+      button.addEventListener('click', () => {
+        if (!input.value) return (div.innerHTML = `<p>Invalid input.</p>`);
+
+        const inputValue = +input.value;
+
+        if (!Number.isInteger(inputValue) || Math.abs(inputValue) != inputValue) {
+          return (div.innerHTML = `<p>Invalid input.</p>`);
+        }
+
+        fetch(`data?number=${inputValue}`)
+          .then(res => res.text())
+          .then(data => {
+            if (!isNaN(+data)) {
+              div.innerHTML = `<p>The sum from 1 to ${input.value} is ${data}</p>`;
+            }
+          });
+      });
+    </script>
+  </body>
 </html>
