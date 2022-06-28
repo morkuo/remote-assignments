@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <%- include ('partials/style') %>
+  </head>
+  <body>
+    <div>
+      <h3>Sign up</h3>
+      <form action="/signup" method="POST">
+        <p>Email</p>
+        <input type="text" name="email" placeholder="test1@gmail.com" title="Testing email format: test<1-3>@gmail.com"/>
+        <p>Password</p>
+        <input type="password" name="password" placeholder="1234" title=" Same for all registered testing email"/>
+        <p>Comfirm password</p>
+        <input type="password" name="comfirmPassword" />
+        <button>Sign up</button>
+      </form>
+      <% for (let msg of error.signup){ %>
+        <p><%= msg %></p>
+      <% } %>
+      <% if(message){%>
+        <p><%= message %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <h3>Sing in</h3>
+      <form action="/signin" method="POST">
+        <p>Email</p>
+        <input type="text" name="email" />
+        <p>Password</p>
+        <input type="password" name="password" title="At least 4 Characters" />
+        <button>Sign in</button>
+      </form>
+      <% for (let msg of error.signin){ %>
+        <p><%= msg %></p>
+      <% }%>
+    </div>
+  </body>
+</html>

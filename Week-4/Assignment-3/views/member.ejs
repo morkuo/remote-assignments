@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member</title>
+    <%- include ('partials/style') %>
+  </head>
+  <body>
+    <div id="div_welcome">
+      <% if(message.includes('Welcome')){ %>
+      <p><%= message %></p>
+      <form action="/signout"><button>Sign out</button></form>
+      <% }else{ %>
+      <p><%= message %></p>
+      <form action="/"><button>Go</button></form>
+      <% } %>
+    </div>
+  </body>
+</html>
