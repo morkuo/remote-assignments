@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+body div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+
+body div div {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+body div div img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 90%;
+  margin: 0.5rem 0;
+  border: 1px solid black;
+}

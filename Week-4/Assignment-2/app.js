@@ -16,9 +16,19 @@ function render(data) {
 
     for (let itemDetail of Object.values(item)) {
       const paragraph = document.createElement('p');
-      paragraph.innerText = itemDetail;
+
+      //Add dollar sign to the price text
+      if (isNaN(+itemDetail)) paragraph.innerText = itemDetail;
+      else paragraph.innerText = paragraph.innerText = '$ ' + itemDetail;
+
       itemBox.appendChild(paragraph);
     }
+
+    //Add img to each item
+    const itemName = itemBox.querySelector('p');
+    const itemImage = document.createElement('img');
+    itemImage.setAttribute('alt', itemName.innerText + ' Image');
+    itemBox.insertAdjacentElement('afterbegin', itemImage);
   }
 }
 
